@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 
 import postRoutes from './routes/posts.js'
+import { mongoConnectionUrl } from './mongoCreds.js'
 
 const app = express()
 
@@ -13,8 +14,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }))
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }))
 app.use(cors())
 
-const CONNECTION_URL = 
-'mongodb+srv://vwvats:udankhatola2@cluster0.convb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const CONNECTION_URL = mongoConnectionUrl
 const PORT = process.env.PORT || 4000
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })

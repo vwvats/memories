@@ -1,6 +1,9 @@
 # dependencies
 node_modules/
 
+# secret
+mongoCreds.js
+
 # misc
 .DS_Store
 .env.local
